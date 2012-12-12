@@ -18,7 +18,7 @@
 				if(value && value.length > 0) {
 					$.ajax({ // TODO: cater for progressive loading
 						url : options.url,
-						data : options.param + "=" + value, // TODO: candidate for function
+						data : options.params(value),
 						type : options.type,
 						dataType : options.dataType,
 						success : function(data, xhr, status) {

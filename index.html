@@ -19,7 +19,9 @@
 			$(document).ready(function() {
 				$("#keyword_field").activesearch({
 					'url' : 'search.php',
-					'param' : 'keyword',
+					'params' : function(value){
+						return "keyword=" + value;
+					},
 					'success' : function(data, xhr, status) {
 						var results_div = $("#results");
 						results_div.html("");
