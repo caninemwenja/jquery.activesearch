@@ -15,14 +15,14 @@
 
 			$this.bind("keyup.activesearch", function(event) {
 				var value = $this.val();
-				if(value && value.length > 0) {
-					$.ajax({ // TODO: cater for progressive loading
-						url : options.url,
-						data : options.params(value),
+				if(value && value.length > 0) { // TODO: cater for additional filters eg if val > 3 chars
+					$.ajax({ // TODO: cater for progress status
+						url : options.url, // TODO: cater for pretty urls
+						data : options.params(value), // TODO: cater for content type
 						type : options.type,
 						dataType : options.dataType,
-						success : function(data, xhr, status) {
-							options.success(data, xhr, status);
+						success : function(data, status, xhr) {
+							options.success(data, status, xhr);
 						},
 						error : function(xhr, status, error) {
 							options.error(xhr, status, error);
