@@ -6,7 +6,8 @@
 	<body>
 		<form>
 			<label>Search: </label>&nbsp;
-			<input type="text" name="keyword" id="keyword_field"/>
+			<input type="text" name="keyword" id="keyword_field"/>&nbsp;
+			<img src="loadingAnim.gif" id="loading"/>
 		</form>
 		<br/>
 		<ol id="results"></ol>
@@ -26,8 +27,15 @@
 							results_div.append("<li>" + data[i] + "</li>");
 						}
 					},
+					'beforeSearch': function(){
+						$("#loading").show();
+					},
+					'afterSearch': function(){
+						$("#loading").hide(300);
+					},
 				});
 			});
+			$("#loading").hide();
 		</script>
 	</body>
 </html>
