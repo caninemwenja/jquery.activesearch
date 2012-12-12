@@ -3,10 +3,10 @@
 		var options = $.extend({
 			'type' : 'GET',
 			'dataType' : 'json',
-			'error' : function(d, e, x) {
-				console.log("E: " + e);
-				console.log("X: " + x);
-				console.log("D: " + d);
+			'error' : function(xhr, status, error) {
+				console.log("Status: " + status);
+				console.log("Error: " + error);
+				console.log("XHR: " + xhr);
 			}
 		}, options);
 
@@ -24,8 +24,8 @@
 						success : function(data, xhr, status) {
 							options.success(data, xhr, status);
 						},
-						error : function(d, e, x) {
-							options.error(d, e, x);
+						error : function(xhr, status, error) {
+							options.error(xhr, status, error);
 						}
 					});
 				}
