@@ -20,7 +20,7 @@
 				var value = $this.val();
 				if(value && value.length > 0) { // TODO: cater for additional filters eg if val > 3 chars
 					options.beforeSearch();
-					$.ajax({ // TODO: cater for progress status
+					$.ajax({
 						url : options.url, // TODO: cater for pretty urls
 						data : options.params(value),
 						contentType: options.contentType,
