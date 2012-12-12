@@ -27,8 +27,8 @@
 				if(value && options.filter(value, event)) {
 					options.beforeSearch();
 					$.ajax({
-						url : options.url(value),
-						data : options.params(value),
+						url : typeof options.url=='function' ? options.url(value): options.url,
+						data : typeof options.params=='function'? options.params(value): options.params,
 						contentType : options.contentType,
 						type : options.type,
 						dataType : options.dataType,
