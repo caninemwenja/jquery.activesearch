@@ -27,7 +27,7 @@
 				if(value && options.filter(value, event)) {
 					options.beforeSearch();
 					$.ajax({
-						url : options.url, // TODO: cater for pretty urls
+						url : options.url(value),
 						data : options.params(value),
 						contentType : options.contentType,
 						type : options.type,
