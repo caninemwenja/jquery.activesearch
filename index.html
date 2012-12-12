@@ -16,9 +16,7 @@
 		<script>
 			$(document).ready(function() {
 				$("#keyword_field").activesearch({
-					'url' : function() {
-						return 'search.php';
-					},
+					'url' : 'search.php',
 					'params' : function(value) {
 						return "keyword=" + value;
 					},
