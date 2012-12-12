@@ -19,7 +19,7 @@
 					'params' : function(value){
 						return "keyword=" + value;
 					},
-					'success' : function(data, xhr, status) {
+					'success' : function(data) {
 						var results_div = $("#results");
 						results_div.html("");
 						for( i = 0; i < data.length; i++) {
