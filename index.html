@@ -7,15 +7,28 @@
 		<form>
 			<label>Search: </label>&nbsp;
 			<input type="text" name="keyword" id="keyword_field"/>
-			<button type="submit">Search</button>
+			<button type="submit">
+				Search
+			</button>
 		</form>
-		
 		<br/>
-		
-		<ol id="results">
-		</ol>
-		
+		<ol id="results"></ol>
 		<script src="jquery.min.js"></script>
 		<script src="jquery.activesearch.js"></script>
+		<script>
+			$(document).ready(function() {
+				$("#keyword_field").activesearch({
+					'url' : 'search.php',
+					'param' : 'keyword',
+					'success' : function(data, xhr, status) {
+						var results_div = $("#results");
+						results_div.html("");
+						for( i = 0; i < data.length; i++) {
+							results_div.append("<li>" + data[i] + "</li>");
+						}
+					},
+				});
+			});
+		</script>
 	</body>
 </html>
