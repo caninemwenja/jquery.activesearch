@@ -16,9 +16,9 @@
 			$this.bind("keyup.activesearch", function(event) {
 				var value = $this.val();
 				if(value && value.length > 0) {
-					$.ajax({
+					$.ajax({ // TODO: cater for progressive loading
 						url : options.url,
-						data : options.param + "=" + value,
+						data : options.param + "=" + value, // TODO: candidate for function
 						type : options.type,
 						dataType : options.dataType,
 						success : function(data, xhr, status) {
