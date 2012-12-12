@@ -9,7 +9,8 @@
 			'error' : function(xhr, status, error) {
 				console.log("Status: " + status);
 				console.log("Error: " + error);
-				console.log("XHR: " + xhr);
+				console.log("XHR: ");
+				console.log(xhr);
 			}
 		}, options);
 
