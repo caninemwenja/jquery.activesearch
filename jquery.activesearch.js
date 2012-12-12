@@ -3,7 +3,7 @@
 		var options = $.extend({
 			'type' : 'GET',
 			'dataType' : 'json',
-			'contentType':'application/x-www-form-urlencoded',
+			'contentType':'application/x-www-form-urlencoded;charset=UTF-8',
 			'error' : function(xhr, status, error) {
 				console.log("Status: " + status);
 				console.log("Error: " + error);
